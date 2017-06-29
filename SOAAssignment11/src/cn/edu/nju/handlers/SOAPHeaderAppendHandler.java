@@ -30,7 +30,7 @@ public class SOAPHeaderAppendHandler implements SOAPHandler<SOAPMessageContext> 
 			
 			if (!hasIdentity) {
 				SOAPElement idElement = context.getMessage().getSOAPHeader().addChildElement("logID","client");
-				idElement.addAttribute(new QName("value"),States.getIdentity().name());
+				idElement.addAttribute(new QName("value"),""+States.getIdentity().getId());
 			}
 			
 		} catch (SOAPException e) {

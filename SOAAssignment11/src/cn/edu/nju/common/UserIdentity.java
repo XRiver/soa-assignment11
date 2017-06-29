@@ -11,7 +11,11 @@ LOGGED_OUT("logged_out",1),TEACHER("teacher",2),STUDENT("student",3),NONE("none"
 		this.idNum = idNum;
 	}
 	
-	UserIdentity fromId(int id) {
+	public int getId() {
+		return idNum;
+	}
+	
+	public static UserIdentity fromId(int id) {
 		for (UserIdentity identity: UserIdentity.values()) {
 			if (identity.idNum==id) {
 				return identity;
