@@ -34,11 +34,11 @@ public class SOAPHeaderCheckHandler implements SOAPHandler<SOAPMessageContext> {
 			if (hasIdentity) {
 				//Message sent
 				UserIdentity identity = UserIdentity.fromId(Integer.parseInt(header.getAttribute("value")));
-				System.out.println("Got identity:"+identity);
+//				System.out.println("Got identity:"+identity);
 				ServiceTypes serType = States.getServiceType();
 				
 				if (serType==ServiceTypes.LOG_IN) {
-					hintCheck(serType, identity, true);
+//					hintCheck(serType, identity, true);
 					return true;
 				}
 				
@@ -46,7 +46,7 @@ public class SOAPHeaderCheckHandler implements SOAPHandler<SOAPMessageContext> {
 				switch(identity) {
 				case LOGGED_OUT:
 				case NONE:
-					hintCheck(serType, identity, false);
+//					hintCheck(serType, identity, false);
 					throw new RuntimeException();
 //					return false;
 				case STUDENT:
@@ -58,17 +58,17 @@ public class SOAPHeaderCheckHandler implements SOAPHandler<SOAPMessageContext> {
 						hintCheck(serType, identity, true);
 						return true;
 					} else {
-						hintCheck(serType, identity, false);
+//						hintCheck(serType, identity, false);
 						throw new RuntimeException();
 //						return false;
 					}
 				case TEACHER:
 					permits = ServiceTypes.values();
 					if (Arrays.asList(permits).contains(serType)) {
-						hintCheck(serType, identity, true);
+//						hintCheck(serType, identity, true);
 						return true;
 					} else {
-						hintCheck(serType, identity, false);
+//						hintCheck(serType, identity, false);
 						throw new RuntimeException();
 //						return false;
 					}
