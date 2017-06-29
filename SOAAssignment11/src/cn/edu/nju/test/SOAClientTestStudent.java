@@ -96,10 +96,8 @@ public class SOAClientTestStudent {
 			System.out.println(user);
 
 		} catch (ParamNullException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (EmailPwdException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {

@@ -39,7 +39,21 @@ public class 学号课程号类型 {
     @XmlElement(required = true)
     protected String 课程编号;
 
-    /**
+    public 学号课程号类型(String 学号, String 课程编号) {
+		super();
+		this.学号 = 学号;
+		this.课程编号 = 课程编号;
+	}
+    
+    
+
+	public 学号课程号类型() {
+		super();
+	}
+
+
+
+	/**
      * 获取学号属性的值。
      * 
      * @return
