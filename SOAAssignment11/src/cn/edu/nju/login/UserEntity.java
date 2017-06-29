@@ -134,4 +134,9 @@ public class UserEntity {
         this.password = value;
     }
 
+	@Override
+	public String toString() {
+		return "UserEntity [email=" + email + ", id=" + id + ", identity=" + identity + ", password=" + password + "]";
+	}
+
 }
