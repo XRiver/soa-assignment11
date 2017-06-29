@@ -23,7 +23,7 @@ public class SOAPMessagePersistenceHandler implements SOAPHandler<SOAPMessageCon
 		try {
 			out = new FileOutputStream(f);
 		} catch (FileNotFoundException e) {
-			System.out.println("Cannot persist messages");
+//			System.out.println("Cannot persist messages");
 			out = System.out;
 		}
 	}
@@ -34,7 +34,7 @@ public class SOAPMessagePersistenceHandler implements SOAPHandler<SOAPMessageCon
 	}
 	
 	public boolean handleMessage(SOAPMessageContext context) {
-		System.out.println("INVOKE PERSIST");
+//		System.out.println("INVOKE PERSIST");
 		
 		try {
 			context.getMessage().writeTo(out);
@@ -50,7 +50,7 @@ public class SOAPMessagePersistenceHandler implements SOAPHandler<SOAPMessageCon
 	}
 
 	public boolean handleFault(SOAPMessageContext context) {
-		System.out.println("INVOKE PERSIST FOR FAULT");
+//		System.out.println("INVOKE PERSIST FOR FAULT");
 		
 		try {
 			context.getMessage().writeTo(out);
