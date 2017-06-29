@@ -6,6 +6,7 @@ import javax.xml.namespace.QName;
 
 import cn.edu.nju.common.ServiceTypes;
 import cn.edu.nju.common.States;
+import cn.edu.nju.common.UserIdentity;
 import cn.edu.nju.handlers.ClientHandlerResolver;
 import cn.edu.nju.login.EmailPwdException;
 import cn.edu.nju.login.ParamNullException;
@@ -31,7 +32,21 @@ public class UserServiceWrapper implements UserService {
 	@Override
 	public UserEntity login(String email, String password) throws ParamNullException, EmailPwdException {
 		States.setServiceType(ServiceTypes.LOG_IN);
-		return serviceImpl.login(email, password);
+		
+		try {
+			UserEntity u = serviceImpl.login(email, password);
+			States.setIdentity(UserIdentity.fromId(u.getId()));
+			return u;
+		} catch (Exception e) {
+			String errMsg = e.getMessage();
+			if (errMsg.contains("email or password wrong")) {
+				throw new EmailPwdException();
+			} else if(errMsg.contains("login")){
+				throw new ParamNullException();
+			} else {
+				throw e;
+			}
+		}
 	}
 
 	public static UserService getInstance() {
