@@ -37,19 +37,19 @@ public class StudentInfoServiceWrapper implements StudentInfoService {
 	@Override
 	public 学生信息 deleteInfo(学号类型 parameters) throws InvalidStudentId {
 		States.setServiceType(ServiceTypes.DEL_INFO);
-		return null;
+		return serviceImpl.deleteInfo(parameters);
 	}
 
 	@Override
 	public void modifyInfo(Holder<学生信息> parameters) throws DataFormatError {
-		// TODO Auto-generated method stub
-
+		States.setServiceType(ServiceTypes.MODIFY_INFO);
+		modifyInfo(parameters);
 	}
 
 	@Override
 	public 学生信息 queryInfo(String parameters) throws InvalidStudentId {
-		// TODO Auto-generated method stub
-		return null;
+		States.setServiceType(ServiceTypes.QUERY_INFO);
+		return serviceImpl.queryInfo(parameters);
 	}
 
 	public static StudentInfoService getInstance() {
