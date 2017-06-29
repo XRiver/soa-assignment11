@@ -37,8 +37,20 @@ public class 成绩类型 {
     @XmlElement(required = true)
     protected String 学号;
     protected int 得分;
+    
+    
 
-    /**
+    public 成绩类型() {
+		super();
+	}
+
+	public 成绩类型(String 学号, int 得分) {
+		super();
+		this.学号 = 学号;
+		this.得分 = 得分;
+	}
+
+	/**
      * 获取学号属性的值。
      * 
      * @return

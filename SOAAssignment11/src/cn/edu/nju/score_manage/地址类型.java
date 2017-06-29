@@ -170,4 +170,18 @@ public class 地址类型 {
         this.号 = value;
     }
 
+	public 地址类型(String 省份, String 城市, String 区, String 街道, String 号) {
+		super();
+		this.省份 = 省份;
+		this.城市 = 城市;
+		this.区 = 区;
+		this.街道 = 街道;
+		this.号 = 号;
+	}
+
+	public 地址类型() {
+		super();
+	}
+    
+
 }

@@ -120,6 +120,11 @@ public class 课程成绩类型 {
     public void set成绩性质(成绩性质类型 value) {
         this.成绩性质 = value;
     }
+    
+
+	public void set成绩(List<成绩类型> 成绩) {
+		this.成绩 = 成绩;
+	}
 
 	@Override
 	public String toString() {

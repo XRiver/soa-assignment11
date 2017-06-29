@@ -63,8 +63,12 @@ public class 地址类型 {
     public String get省份() {
         return 省份;
     }
+    
+    public 地址类型() {
+		super();
+	}
 
-    public 地址类型(String 省份, String 城市, String 区, String 街道, String 号) {
+	public 地址类型(String 省份, String 城市, String 区, String 街道, String 号) {
 		super();
 		this.省份 = 省份;
 		this.城市 = 城市;
