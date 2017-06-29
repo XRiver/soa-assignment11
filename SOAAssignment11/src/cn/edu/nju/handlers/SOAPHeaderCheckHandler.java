@@ -47,7 +47,8 @@ public class SOAPHeaderCheckHandler implements SOAPHandler<SOAPMessageContext> {
 				case LOGGED_OUT:
 				case NONE:
 					hintCheck(serType, identity, false);
-					return false;
+					throw new RuntimeException();
+//					return false;
 				case STUDENT:
 					permits = new ServiceTypes[]{
 							ServiceTypes.QUERY_INFO,
@@ -58,7 +59,8 @@ public class SOAPHeaderCheckHandler implements SOAPHandler<SOAPMessageContext> {
 						return true;
 					} else {
 						hintCheck(serType, identity, false);
-						return false;
+						throw new RuntimeException();
+//						return false;
 					}
 				case TEACHER:
 					permits = ServiceTypes.values();
@@ -67,11 +69,13 @@ public class SOAPHeaderCheckHandler implements SOAPHandler<SOAPMessageContext> {
 						return true;
 					} else {
 						hintCheck(serType, identity, false);
-						return false;
+						throw new RuntimeException();
+//						return false;
 					}
 				default:
-					System.out.println("ERROR: failed to parse user identity");
-					return false;
+					System.out.println("ERROR: failed to retrieve user identity");
+					throw new RuntimeException();
+//					return false;
 				}
 								
 			} else {
@@ -81,7 +85,8 @@ public class SOAPHeaderCheckHandler implements SOAPHandler<SOAPMessageContext> {
 			
 		} catch (SOAPException e) {
 			e.printStackTrace();
-			return false;
+			throw new RuntimeException();
+//			return false;
 		}
 		
 	}
