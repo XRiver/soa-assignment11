@@ -168,4 +168,9 @@ public class 部门类型 {
         this.部门名称 = value;
     }
 
+	@Override
+	public String toString() {
+		return "部门类型 [部门主管=" + 部门主管 + ", 部门描述=" + 部门描述 + ", 部门属性=" + 部门属性 + ", 部门编号=" + 部门编号 + ", 部门名称=" + 部门名称 + "]";
+	}
+    
 }

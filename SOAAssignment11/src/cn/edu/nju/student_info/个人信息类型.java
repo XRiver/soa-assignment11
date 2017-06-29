@@ -59,4 +59,11 @@ public class 个人信息类型
         this.座机号码 = value;
     }
 
+	@Override
+	public String toString() {
+		return "个人信息类型 [座机号码=" + 座机号码 + "]";
+	}
+    
+    
+
 }

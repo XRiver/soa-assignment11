@@ -46,10 +46,6 @@ public class 学生信息 {
     protected String 学号;
 
     
-    @Override
-	public String toString() {
-		return "学生信息 [年级=" + 年级 + ", 基本信息=" + 基本信息 + ", 课程成绩列表=" + 课程成绩列表 + ", 学号=" + 学号 + "]";
-	}
     /**
      * 获取年级属性的值。
      * 
@@ -145,5 +141,12 @@ public class 学生信息 {
     public void set学号(String value) {
         this.学号 = value;
     }
+
+	@Override
+	public String toString() {
+		return "学生信息 [年级=" + 年级 + ", 基本信息=" + 基本信息 + ", 课程成绩列表=" + 课程成绩列表 + ", 学号=" + 学号 + "]";
+	}
+    
+    
 
 }

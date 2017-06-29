@@ -58,11 +58,22 @@ public class 地址类型 {
      *     {@link String }
      *     
      */
+    
+    
     public String get省份() {
         return 省份;
     }
 
-    /**
+    public 地址类型(String 省份, String 城市, String 区, String 街道, String 号) {
+		super();
+		this.省份 = 省份;
+		this.城市 = 城市;
+		this.区 = 区;
+		this.街道 = 街道;
+		this.号 = 号;
+	}
+
+	/**
      * 设置省份属性的值。
      * 
      * @param value
@@ -169,5 +180,12 @@ public class 地址类型 {
     public void set号(String value) {
         this.号 = value;
     }
+
+	@Override
+	public String toString() {
+		return "地址类型 [省份=" + 省份 + ", 城市=" + 城市 + ", 区=" + 区 + ", 街道=" + 街道 + ", 号=" + 号 + "]";
+	}
+    
+    
 
 }

@@ -78,4 +78,10 @@ public class 成绩类型 {
         this.得分 = value;
     }
 
+	@Override
+	public String toString() {
+		return "成绩类型 [学号=" + 学号 + ", 得分=" + 得分 + "]";
+	}
+    
+
 }

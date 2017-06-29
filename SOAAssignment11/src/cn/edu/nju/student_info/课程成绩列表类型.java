@@ -66,4 +66,11 @@ public class 课程成绩列表类型 {
         return this.课程成绩;
     }
 
+	@Override
+	public String toString() {
+		return "课程成绩列表类型 [课程成绩=" + 课程成绩 + "]";
+	}
+    
+    
+
 }

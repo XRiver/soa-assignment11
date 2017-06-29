@@ -121,4 +121,10 @@ public class 课程成绩类型 {
         this.成绩性质 = value;
     }
 
+	@Override
+	public String toString() {
+		return "课程成绩类型 [成绩=" + 成绩 + ", 课程编号=" + 课程编号 + ", 成绩性质=" + 成绩性质 + "]";
+	}
+    
+
 }

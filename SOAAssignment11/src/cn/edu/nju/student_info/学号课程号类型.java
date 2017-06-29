@@ -87,4 +87,11 @@ public class 学号课程号类型 {
         this.课程编号 = value;
     }
 
+	@Override
+	public String toString() {
+		return "学号课程号类型 [学号=" + 学号 + ", 课程编号=" + 课程编号 + "]";
+	}
+    
+    
+
 }

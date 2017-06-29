@@ -59,4 +59,10 @@ public class 学号类型 {
         this.学号 = value;
     }
 
+	@Override
+	public String toString() {
+		return "学号类型 [学号=" + 学号 + "]";
+	}
+    
+
 }
