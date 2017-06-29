@@ -8,6 +8,7 @@ import cn.edu.nju.login.ParamNullException;
 import cn.edu.nju.login.UserEntity;
 import cn.edu.nju.login.UserService;
 import cn.edu.nju.score_manage.ScoreManageService;
+import cn.edu.nju.student_info.InvalidStudentId;
 import cn.edu.nju.student_info.StudentInfoService;
 import cn.edu.nju.wrapservice.ScoreManagementServiceWrapper;
 import cn.edu.nju.wrapservice.StudentInfoServiceWrapper;
@@ -63,13 +64,18 @@ public class SOAClientTest {
 		try {
 			UserEntity user = service1.login("none@smail.nju.edu.cn", "123");
 			System.out.println(user);
-
 		} catch (ParamNullException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (EmailPwdException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+		try {
+			service2.queryInfo("141250179");
+		} catch (InvalidStudentId e) {
+			// TODO Auto-generated catch block
+			System.err.println(e.getFaultInfo());
 		}
 	}
 
@@ -77,16 +83,24 @@ public class SOAClientTest {
 	@Test
 	public void test4() {
 		try {
-			UserEntity user = service1.login("teacher@smail.nju.edu.cn", "12");
-			
+			UserEntity user1 = service1.login("teacher@smail.nju.edu.cn", "12");
 		} catch (ParamNullException e) {
-			System.err.println(e.getMessage());
+			System.err.println("参数为空：" + e.getMessage());
 		} catch (EmailPwdException e) {
-			System.err.println(e.getMessage());
-		}catch(Exception e){
+			System.err.println("密码或邮箱有误：" + e.getMessage());
+		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
-		
+		try {
+			UserEntity user2 = service1.login("teacher@smail.nju.edu.cn", "");
+		} catch (ParamNullException e) {
+			System.err.println("参数为空：" + e.getMessage());
+		} catch (EmailPwdException e) {
+			System.err.println("密码或邮箱有误：" + e.getMessage());
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}
+
 	}
 
 }
